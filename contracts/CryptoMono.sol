@@ -11,7 +11,7 @@ contract CryptoMono is Ownable{
         require(address(this).balance < target, "Target already achieved!");
    }
    
-   function withdraw() public onlyOwner{
-      payable(owner()).transfer(address(this).balance);
+   function withdraw(address _beneficiary) public onlyOwner{
+      payable(_beneficiary).transfer(address(this).balance);
    }
 }

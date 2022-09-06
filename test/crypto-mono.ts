@@ -27,12 +27,12 @@ describe("CryptoMono", function () {
 
     it("Should be possible to withdraw funds for onwer", async function () {
       await cryptoMono.connect(deployer).addFund({value: ethers.utils.parseEther('1')});
-      await cryptoMono.connect(deployer).withdraw();
+      await cryptoMono.connect(deployer).withdraw(deployer.address);
     });
 
     it("Should be impossible to withdraw funds for any another address", async function () {
       await cryptoMono.connect(deployer).addFund({value: ethers.utils.parseEther('1')});
-      await expect(cryptoMono.connect(user1).withdraw()).to.be.
+      await expect(cryptoMono.connect(user1).withdraw(user1.address)).to.be.
       revertedWith('Ownable: caller is not the owner');
     });
 });
