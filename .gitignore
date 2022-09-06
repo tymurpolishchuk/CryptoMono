@@ -1,0 +1,19 @@
+node_modules
+coverage
+coverage.json
+typechain
+gasReporterOutput.json
+
+.idea
+
+#Hardhat files
+cache
+artifacts
+
+package-lock.json
+
+yarn-error.log
+
+
+#Environment
+.env
